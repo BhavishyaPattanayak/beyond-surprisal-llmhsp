@@ -1,0 +1,248 @@
+{
+  "context_window": 1024,
+  "stride": 256,
+  "seed": 2026,
+  "inner_folds": 5,
+  "outer_folds": 10,
+  "inner_seed": "2026 + outer_fold",
+  "alphas": [
+    0.0001,
+    0.00021544346900318845,
+    0.00046415888336127773,
+    0.001,
+    0.002154434690031882,
+    0.004641588833612777,
+    0.01,
+    0.021544346900318822,
+    0.046415888336127774,
+    0.1,
+    0.21544346900318823,
+    0.46415888336127775,
+    1.0,
+    2.154434690031882,
+    4.641588833612772,
+    10.0,
+    21.54434690031882,
+    46.41588833612773,
+    100.0,
+    215.44346900318823,
+    464.1588833612773,
+    1000.0,
+    2154.4346900318824,
+    4641.588833612773,
+    10000.0
+  ],
+  "pca": {
+    "n_components": 16,
+    "svd_solver": "randomized",
+    "iterated_power": 3,
+    "random_state": 2026
+  },
+  "predictors": {
+    "M0": [
+      "word_length",
+      "previous_word_length",
+      "log_frequency",
+      "previous_log_frequency",
+      "n_bpe",
+      "previous_n_bpe",
+      "lag2_length",
+      "lag2_frequency",
+      "lag2_n_bpe",
+      "lag2_frequency_available",
+      "lag2_context_available",
+      "current_terminal_punctuation",
+      "current_comma",
+      "current_colon_semicolon",
+      "current_double_quote",
+      "current_digit",
+      "current_initial_uppercase",
+      "previous_terminal_punctuation",
+      "previous_comma",
+      "previous_colon_semicolon",
+      "previous_double_quote",
+      "previous_digit",
+      "previous_initial_uppercase",
+      "log1p_region_position",
+      "log1p_prior_bpe_count",
+      "model_position_div1024",
+      "model_position_div1024_squared"
+    ],
+    "M1": [
+      "current_surprisal",
+      "previous_surprisal",
+      "word_length",
+      "previous_word_length",
+      "log_frequency",
+      "previous_log_frequency",
+      "n_bpe",
+      "previous_n_bpe",
+      "lag2_length",
+      "lag2_frequency",
+      "lag2_n_bpe",
+      "lag2_frequency_available",
+      "lag2_surprisal",
+      "lag2_context_available",
+      "current_terminal_punctuation",
+      "current_comma",
+      "current_colon_semicolon",
+      "current_double_quote",
+      "current_digit",
+      "current_initial_uppercase",
+      "previous_terminal_punctuation",
+      "previous_comma",
+      "previous_colon_semicolon",
+      "previous_double_quote",
+      "previous_digit",
+      "previous_initial_uppercase",
+      "log1p_region_position",
+      "log1p_prior_bpe_count",
+      "model_position_div1024",
+      "model_position_div1024_squared"
+    ]
+  },
+  "scalar_columns": [
+    "early_mean_cosine",
+    "middle_mean_cosine",
+    "late_mean_cosine"
+  ],
+  "scalar_transitions": {
+    "gpt2": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "distilgpt2": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "pythia-160m": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "pythia-410m": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    ]
+  },
+  "rich_layers": {
+    "gpt2": [
+      4,
+      8,
+      12
+    ],
+    "distilgpt2": [
+      2,
+      4,
+      6
+    ],
+    "pythia-160m": [
+      4,
+      8,
+      12
+    ],
+    "pythia-410m": [
+      8,
+      16,
+      24
+    ]
+  },
+  "rich_feature_definitions": {
+    "displacement": "Final vs embedding, block L/3 and block 2L/3: cosine distance and L2 normalized by source norm (6).",
+    "curvature": "Cosine distance between successive displacement VECTORS: mean, max, thirds and zero-transition fraction (6).",
+    "norm_dynamics": "Raw residual-stream log norms: input, final, net change, max absolute step, three block-third means (7).",
+    "contextualization": "Final full-context vs zero preceding BPE context: cosine and relative L2; same token IDs and absolute positions (2).",
+    "context_dependence": "Final full-context vs last 16 and 64 preceding BPEs: cosine and relative L2; same IDs and positions (4).",
+    "previous_relations": "Same-window cosine to previous word, two-back word, mean of up to three predecessors at early/middle/final blocks, plus final-minus-early differences (12).",
+    "layer_early": "16 training-only centered PCA scores from raw block L/3, then nested ridge.",
+    "layer_middle": "16 training-only centered PCA scores from raw block 2L/3, then nested ridge.",
+    "layer_late": "16 training-only centered PCA scores from raw final block, then nested ridge.",
+    "layer_combination": "Concatenation of the three 16-component layer PCAs (48), nested ridge.",
+    "typicality": "At each selected layer: RMS distance to training centroid, shrinkage-whitened PCA radius, and RMS PCA reconstruction residual (9). Training reference only; no neighbor search."
+  },
+  "typicality_variance_floor": "0.1 * mean retained PCA explained variance",
+  "scaling": "StandardScaler, training subset only",
+  "intercept": "unpenalized",
+  "variance": "selected pooled inner validation SSE / outer training N",
+  "log_likelihood": "-0.5 * (log(2*pi*variance) + (observed_rt-prediction)^2/variance)",
+  "surprisal_units": "bits",
+  "likelihood_units": "nats",
+  "final_entropy_predictors": false,
+  "sample_counts": {
+    "natural_stories": 10216,
+    "geco": 30155
+  },
+  "context_counts": {
+    "natural_stories": 10256,
+    "geco": 56410
+  }
+}

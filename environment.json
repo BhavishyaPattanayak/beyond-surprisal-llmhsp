@@ -1,0 +1,1229 @@
+{
+  "python": "3.12.14 (main, Aug 12 2026, 13:57:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "torch": "2.14.0",
+  "transformers": "5.17.0",
+  "memory_bytes": 17179869184,
+  "mps_recommended_bytes": 12713115648,
+  "inference_dtype": "float32",
+  "regression_dtype": "float64",
+  "quantized": false,
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "huggingface-hub": "1.31.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.2"
+  },
+  "validation_status": "All eight saved-feature statistical refits reproduce the reference exactly. Fresh Apple MPS extraction is validated: four Pythia cases match exactly; four GPT cases show comparably negligible backend-dependent floating-point variation. No methodological discrepancy or qualitative change was found.",
+  "validation": {
+    "saved_feature_refits": {
+      "natural_stories_gpt2": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "natural_stories_distilgpt2": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "natural_stories_pythia-160m": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "natural_stories_pythia-410m": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "geco_gpt2": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "geco_distilgpt2": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "geco_pythia-160m": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      },
+      "geco_pythia-410m": {
+        "status": "passed",
+        "maximum_absolute_deviation": 0.0
+      }
+    },
+    "standalone_cli": "evaluate passed from an unrelated working directory with an external cache; output matches reference",
+    "fresh_extraction": {
+      "status": "all_eight_cases_completed",
+      "current_backend": "Apple MPS, float32 neural extraction and float64 regression",
+      "historical_backends": {
+        "gpt2_and_distilgpt2": "CUDA surprisal/scalar trajectories; MPS rich representations",
+        "pythia_160m_and_410m": "MPS"
+      },
+      "methodology_changed": false,
+      "code_frozen_inputs_and_reference_tables_unchanged": true,
+      "acceptance_basis": "Reported absolute deviations are of the same small numerical scale as the original Natural Stories/GPT-2 check. Verified poster labels, contrast signs, positive-fold counts and within-corpus metric rankings are unchanged. No extracted value or reference result was adjusted; no bitwise cross-backend guarantee is made.",
+      "completed_cases": {
+        "natural_stories_gpt2": {
+          "identity_order_folds": "exact (verified against the same frozen input in the completed saved-feature audit)",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0001354217529296875,
+            "scalar": 9.145197170379316e-07
+          },
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 9.094947017729282e-13,
+            "M1_prediction": 0.0002896480586969119,
+            "M1_variance": 4.628979047538451e-05,
+            "M1_ll": 6.247382464152906e-05,
+            "M1_fold_ll": 0.0001979113394554588,
+            "M2_scalar_prediction": 0.00028674110092197225,
+            "M2_scalar_variance": 4.278129074464232e-05,
+            "M2_scalar_ll": 6.295620920582223e-05,
+            "M2_scalar_fold_ll": 0.00019141602660965873,
+            "M2_rich_prediction": 0.00029093483863107394,
+            "M2_rich_variance": 4.3043463051617437e-05,
+            "M2_rich_ll": 6.189643099219211e-05,
+            "M2_rich_fold_ll": 0.00018586488477012608,
+            "S": 0.00018176213632159488,
+            "R_scalar": 1.7001499641899898e-05,
+            "R_rich": 1.3426240741409856e-06,
+            "T_scalar": 0.00016476063666459595,
+            "T_rich": 0.00018310476036731416,
+            "rich_percent_over_surprisal": 2.015457057069625e-05,
+            "scalar_percent_over_surprisal": 3.642557536539387e-06,
+            "M0_pooled_ll": 0.0,
+            "M1_pooled_ll": 0.00018176213632159488,
+            "M2_scalar_pooled_ll": 0.00016476063666459595,
+            "M2_rich_pooled_ll": 0.00018310476036731416
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -48886.422981269796,
+              "fresh": -48886.422981269796,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -48418.71964598104,
+              "fresh": -48418.7194642189,
+              "signed_difference": 0.00018176213632159488
+            },
+            "M2_scalar": {
+              "reference": -48418.62991966612,
+              "fresh": -48418.62975490549,
+              "signed_difference": 0.00016476063666459595
+            },
+            "M2_rich": {
+              "reference": -48172.709297834685,
+              "fresh": -48172.70911472992,
+              "signed_difference": 0.00018310476036731416
+            }
+          },
+          "pooled_likelihood_note": "For this previously completed case, pooled differences are reconstructed from saved S/T differences and exact M0 agreement; last-bit summation differences are not meaningful.",
+          "summary": {
+            "dataset": "natural_stories",
+            "model": "gpt2",
+            "N": 10216,
+            "S": 467.70351705089126,
+            "R_scalar": 0.0897093134196858,
+            "T_scalar": 467.79322636431095,
+            "R_rich": 246.01034948897782,
+            "T_rich": 713.7138665398691,
+            "S_per_word": 0.045781471911794366,
+            "R_scalar_per_word": 8.781256207878406e-06,
+            "T_scalar_per_word": 0.04579025316800225,
+            "R_rich_per_word": 0.02408088777300096,
+            "T_rich_per_word": 0.06986235968479533,
+            "rich_percent_over_surprisal": 52.59963641928508,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 5,
+            "positive_R_rich_folds": 10,
+            "scalar_percent_over_surprisal": 0.019180807958287055
+          },
+          "poster_display_checks": [
+            {
+              "metric": "S",
+              "decimals": 1,
+              "reference": "467.7",
+              "fresh": "467.7",
+              "unchanged": true
+            },
+            {
+              "metric": "R_rich",
+              "decimals": 1,
+              "reference": "246.0",
+              "fresh": "246.0",
+              "unchanged": true
+            },
+            {
+              "metric": "T_rich",
+              "decimals": 1,
+              "reference": "713.7",
+              "fresh": "713.7",
+              "unchanged": true
+            },
+            {
+              "metric": "rich_percent_over_surprisal",
+              "decimals": 1,
+              "reference": "52.6",
+              "fresh": "52.6",
+              "unchanged": true
+            },
+            {
+              "metric": "S_per_word",
+              "decimals": 4,
+              "reference": "0.0458",
+              "fresh": "0.0458",
+              "unchanged": true
+            }
+          ],
+          "report_display_status": "Two-page report unavailable.",
+          "reference_precision_changes": [
+            "S",
+            "R_scalar",
+            "R_rich",
+            "T_scalar",
+            "T_rich",
+            "rich_percent_over_surprisal"
+          ],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "qualitative_note": "Original smallest absolute scalar fold gain was 0.0450 nats, much larger than the sum of recorded maximum fold likelihood deviations; signs and counts are therefore unchanged."
+        },
+        "geco_gpt2": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0001932382583618164,
+            "scalar": 7.0838399790496e-07
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 1.345469571034652e-07,
+            "middle_mean_cosine": 1.8130377990588364e-07,
+            "late_mean_cosine": 7.0838399790496e-07
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.000186920166015625,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.00017968584361938156,
+            "M1_variance": 2.0179779085083283e-05,
+            "M1_ll": 2.336311897011001e-05,
+            "M1_fold_ll": 6.079156810301356e-05,
+            "M1_pooled_ll": 9.066588245332241e-05,
+            "M2_scalar_prediction": 0.00019901583183923321,
+            "M2_scalar_variance": 1.919394071592251e-05,
+            "M2_scalar_ll": 2.3784430624118613e-05,
+            "M2_scalar_fold_ll": 5.7176728660124354e-05,
+            "M2_scalar_pooled_ll": 8.49524512887001e-05,
+            "M2_rich_prediction": 0.00019122643246305415,
+            "M2_rich_variance": 2.1179836494411575e-05,
+            "M2_rich_ll": 2.558971652888431e-05,
+            "M2_rich_fold_ll": 5.792930278403219e-05,
+            "M2_rich_pooled_ll": 9.848165791481733e-05,
+            "S": 9.066587452366548e-05,
+            "R_scalar": 5.713400451412554e-06,
+            "R_rich": 7.815785380671514e-06,
+            "T_scalar": 8.495247402606765e-05,
+            "T_rich": 9.848165984749357e-05,
+            "rich_percent_over_surprisal": 2.4250713572371296e-05,
+            "scalar_percent_over_surprisal": 7.746269039543563e-06
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -156470.35829707375,
+              "fresh": -156470.35829707375,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -156291.49128136935,
+              "fresh": -156291.49119070347,
+              "signed_difference": 9.066588245332241e-05
+            },
+            "M2_scalar": {
+              "reference": -156275.4283697675,
+              "fresh": -156275.42828481505,
+              "signed_difference": 8.49524512887001e-05
+            },
+            "M2_rich": {
+              "reference": -156190.49826454866,
+              "fresh": -156190.498166067,
+              "signed_difference": 9.848165791481733e-05
+            }
+          },
+          "summary": {
+            "dataset": "geco",
+            "model": "gpt2",
+            "N": 30155,
+            "S": 178.8671063702816,
+            "R_scalar": 16.06290588842407,
+            "R_rich": 100.99302463645694,
+            "T_scalar": 194.93001225870563,
+            "T_rich": 279.86013100673847,
+            "S_per_word": 0.005931590328976342,
+            "R_scalar_per_word": 0.000532678026477336,
+            "R_rich_per_word": 0.0033491303145898503,
+            "T_scalar_per_word": 0.006464268355453677,
+            "T_rich_per_word": 0.009280720643566191,
+            "scalar_percent_over_surprisal": 8.980357660156619,
+            "rich_percent_over_surprisal": 56.46260326221542,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 8,
+            "positive_R_rich_folds": 10
+          },
+          "poster_display_checks": [
+            {
+              "metric": "S",
+              "decimals": 1,
+              "reference": "178.9",
+              "fresh": "178.9",
+              "unchanged": true
+            },
+            {
+              "metric": "rich_percent_over_surprisal",
+              "decimals": 1,
+              "reference": "56.5",
+              "fresh": "56.5",
+              "unchanged": true
+            },
+            {
+              "metric": "S_per_word",
+              "decimals": 4,
+              "reference": "0.0059",
+              "fresh": "0.0059",
+              "unchanged": true
+            }
+          ],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [
+            "S",
+            "R_scalar",
+            "R_rich",
+            "T_scalar",
+            "T_rich"
+          ],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 328.60214599996107
+        },
+        "natural_stories_distilgpt2": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.00011086463928222656,
+            "scalar": 5.860285199887905e-07
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 2.0186242799535847e-07,
+            "middle_mean_cosine": 5.860285199887905e-07,
+            "late_mean_cosine": 3.0825992330951735e-07
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.00011086463928222656,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.00019487370195747644,
+            "M1_variance": 2.1074566689094354e-05,
+            "M1_ll": 3.772920948108549e-05,
+            "M1_fold_ll": 7.055901915009599e-05,
+            "M1_pooled_ll": 7.95003361417912e-05,
+            "M2_scalar_prediction": 0.00019653500942240498,
+            "M2_scalar_variance": 2.0059993289578415e-05,
+            "M2_scalar_ll": 3.644872720087733e-05,
+            "M2_scalar_fold_ll": 7.183496472862316e-05,
+            "M2_scalar_pooled_ll": 7.93174549471587e-05,
+            "M2_rich_prediction": 0.00019467409276785475,
+            "M2_rich_variance": 1.767152082265966e-05,
+            "M2_rich_ll": 3.83950775244557e-05,
+            "M2_rich_fold_ll": 7.069023376971018e-05,
+            "M2_rich_pooled_ll": 7.743897731415927e-05,
+            "S": 7.950033261749923e-05,
+            "R_scalar": 1.8287949732354036e-07,
+            "R_rich": 2.0613515516743064e-06,
+            "T_scalar": 7.931745312816929e-05,
+            "T_rich": 7.743898106582492e-05,
+            "rich_percent_over_surprisal": 9.104463558173848e-06,
+            "scalar_percent_over_surprisal": 8.821480612652977e-08
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -48886.422981269796,
+              "fresh": -48886.422981269796,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -48426.92709812654,
+              "fresh": -48426.92701862621,
+              "signed_difference": 7.95003361417912e-05
+            },
+            "M2_scalar": {
+              "reference": -48425.641301231386,
+              "fresh": -48425.64122191393,
+              "signed_difference": 7.93174549471587e-05
+            },
+            "M2_rich": {
+              "reference": -48197.045500924985,
+              "fresh": -48197.04542348601,
+              "signed_difference": 7.743897731415927e-05
+            }
+          },
+          "summary": {
+            "dataset": "natural_stories",
+            "model": "distilgpt2",
+            "N": 10216,
+            "S": 459.4959626435848,
+            "R_scalar": 1.2857967122824983,
+            "R_rich": 229.88159514020305,
+            "T_scalar": 460.78175935586734,
+            "T_rich": 689.3775577837878,
+            "S_per_word": 0.04497806995336578,
+            "R_scalar_per_word": 0.00012586107207150532,
+            "R_rich_per_word": 0.022502113854757543,
+            "T_scalar_per_word": 0.04510393102543729,
+            "T_rich_per_word": 0.06748018380812332,
+            "scalar_percent_over_surprisal": 0.2798276408969988,
+            "rich_percent_over_surprisal": 50.02907834437586,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 7,
+            "positive_R_rich_folds": 10
+          },
+          "poster_display_checks": [
+            {
+              "metric": "S",
+              "decimals": 1,
+              "reference": "459.5",
+              "fresh": "459.5",
+              "unchanged": true
+            },
+            {
+              "metric": "rich_percent_over_surprisal",
+              "decimals": 1,
+              "reference": "50.0",
+              "fresh": "50.0",
+              "unchanged": true
+            },
+            {
+              "metric": "S_per_word",
+              "decimals": 4,
+              "reference": "0.0450",
+              "fresh": "0.0450",
+              "unchanged": true
+            }
+          ],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [
+            "S",
+            "R_rich",
+            "T_scalar",
+            "T_rich"
+          ],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 89.84899566700915
+        },
+        "geco_distilgpt2": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0001220703125,
+            "scalar": 3.7559125343200606e-07
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 1.8465613005336223e-07,
+            "middle_mean_cosine": 3.7559125343200606e-07,
+            "late_mean_cosine": 3.319422753333967e-07
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.0001201629638671875,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.00012190450550519927,
+            "M1_variance": 1.2975888239452615e-05,
+            "M1_ll": 8.467322992089521e-06,
+            "M1_fold_ll": 7.358107723121066e-05,
+            "M1_pooled_ll": 1.7079495592042804e-05,
+            "M2_scalar_prediction": 0.00013244834755710144,
+            "M2_scalar_variance": 1.3361808896661387e-05,
+            "M2_scalar_ll": 9.485190656022269e-06,
+            "M2_scalar_fold_ll": 7.19729268894298e-05,
+            "M2_scalar_pooled_ll": 2.824160037562251e-05,
+            "M2_rich_prediction": 0.00011580019270240882,
+            "M2_rich_variance": 1.2698361842922168e-05,
+            "M2_rich_ll": 7.863078593572936e-06,
+            "M2_rich_fold_ll": 6.660323560936376e-05,
+            "M2_rich_pooled_ll": 1.7756159650161862e-05,
+            "S": 1.70795151746006e-05,
+            "R_scalar": 1.1162077310444829e-05,
+            "R_rich": 6.766753841702666e-07,
+            "T_scalar": 2.824159247438729e-05,
+            "T_rich": 1.7756190516138304e-05,
+            "rich_percent_over_surprisal": 7.909696719821113e-06,
+            "scalar_percent_over_surprisal": 5.993264963422007e-06
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -156470.35829707375,
+              "fresh": -156470.35829707375,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -156311.48554920376,
+              "fresh": -156311.48553212426,
+              "signed_difference": 1.7079495592042804e-05
+            },
+            "M2_scalar": {
+              "reference": -156296.2265275878,
+              "fresh": -156296.2264993462,
+              "signed_difference": 2.824160037562251e-05
+            },
+            "M2_rich": {
+              "reference": -156188.29959038706,
+              "fresh": -156188.2995726309,
+              "signed_difference": 1.7756159650161862e-05
+            }
+          },
+          "summary": {
+            "dataset": "geco",
+            "model": "distilgpt2",
+            "N": 30155,
+            "S": 158.8727649494904,
+            "R_scalar": 15.259032778038694,
+            "R_rich": 123.18595949338527,
+            "T_scalar": 174.1317977275291,
+            "T_rich": 282.05872444287564,
+            "S_per_word": 0.005268538051715815,
+            "R_scalar_per_word": 0.0005060199893231203,
+            "R_rich_per_word": 0.004085092339359485,
+            "T_scalar_per_word": 0.005774558041038935,
+            "T_rich_per_word": 0.009353630391075299,
+            "scalar_percent_over_surprisal": 9.604561727675552,
+            "rich_percent_over_surprisal": 77.53749330953556,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 7,
+            "positive_R_rich_folds": 9
+          },
+          "poster_display_checks": [
+            {
+              "metric": "S",
+              "decimals": 1,
+              "reference": "158.9",
+              "fresh": "158.9",
+              "unchanged": true
+            },
+            {
+              "metric": "rich_percent_over_surprisal",
+              "decimals": 1,
+              "reference": "77.5",
+              "fresh": "77.5",
+              "unchanged": true
+            },
+            {
+              "metric": "S_per_word",
+              "decimals": 4,
+              "reference": "0.0053",
+              "fresh": "0.0053",
+              "unchanged": true
+            }
+          ],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [
+            "S",
+            "R_scalar",
+            "T_scalar",
+            "T_rich"
+          ],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 208.6920517910039
+        },
+        "natural_stories_pythia-160m": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0,
+            "scalar": 0.0
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 0.0,
+            "middle_mean_cosine": 0.0,
+            "late_mean_cosine": 0.0
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.0,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.0,
+            "M1_variance": 0.0,
+            "M1_ll": 0.0,
+            "M1_fold_ll": 0.0,
+            "M1_pooled_ll": 0.0,
+            "M2_scalar_prediction": 0.0,
+            "M2_scalar_variance": 0.0,
+            "M2_scalar_ll": 0.0,
+            "M2_scalar_fold_ll": 0.0,
+            "M2_scalar_pooled_ll": 0.0,
+            "M2_rich_prediction": 0.0,
+            "M2_rich_variance": 0.0,
+            "M2_rich_ll": 0.0,
+            "M2_rich_fold_ll": 0.0,
+            "M2_rich_pooled_ll": 0.0,
+            "S": 0.0,
+            "R_scalar": 0.0,
+            "R_rich": 0.0,
+            "T_scalar": 0.0,
+            "T_rich": 0.0,
+            "rich_percent_over_surprisal": 0.0,
+            "scalar_percent_over_surprisal": 0.0
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -48994.4532706599,
+              "fresh": -48994.4532706599,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -48572.38441666505,
+              "fresh": -48572.38441666505,
+              "signed_difference": 0.0
+            },
+            "M2_scalar": {
+              "reference": -48559.567065014504,
+              "fresh": -48559.567065014504,
+              "signed_difference": 0.0
+            },
+            "M2_rich": {
+              "reference": -48358.86380682855,
+              "fresh": -48358.86380682855,
+              "signed_difference": 0.0
+            }
+          },
+          "summary": {
+            "dataset": "natural_stories",
+            "model": "pythia-160m",
+            "N": 10216,
+            "S": 422.06885399485157,
+            "R_scalar": 12.81735165054698,
+            "R_rich": 213.52060983649892,
+            "T_scalar": 434.88620564539855,
+            "T_rich": 635.5894638313505,
+            "S_per_word": 0.04131449236441382,
+            "R_scalar_per_word": 0.0012546350480175197,
+            "R_rich_per_word": 0.020900607854003418,
+            "T_scalar_per_word": 0.04256912741243134,
+            "T_rich_per_word": 0.06221510021841724,
+            "scalar_percent_over_surprisal": 3.036791634642467,
+            "rich_percent_over_surprisal": 50.58904674333147,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 8,
+            "positive_R_rich_folds": 9
+          },
+          "poster_display_checks": [],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 259.46248833299614
+        },
+        "geco_pythia-160m": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0,
+            "scalar": 0.0
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 0.0,
+            "middle_mean_cosine": 0.0,
+            "late_mean_cosine": 0.0
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.0,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.0,
+            "M1_variance": 0.0,
+            "M1_ll": 0.0,
+            "M1_fold_ll": 0.0,
+            "M1_pooled_ll": 0.0,
+            "M2_scalar_prediction": 0.0,
+            "M2_scalar_variance": 0.0,
+            "M2_scalar_ll": 0.0,
+            "M2_scalar_fold_ll": 0.0,
+            "M2_scalar_pooled_ll": 0.0,
+            "M2_rich_prediction": 0.0,
+            "M2_rich_variance": 0.0,
+            "M2_rich_ll": 0.0,
+            "M2_rich_fold_ll": 0.0,
+            "M2_rich_pooled_ll": 0.0,
+            "S": 0.0,
+            "R_scalar": 0.0,
+            "R_rich": 0.0,
+            "T_scalar": 0.0,
+            "T_rich": 0.0,
+            "rich_percent_over_surprisal": 0.0,
+            "scalar_percent_over_surprisal": 0.0
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -156469.68350331474,
+              "fresh": -156469.68350331474,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -156299.8119335266,
+              "fresh": -156299.8119335266,
+              "signed_difference": 0.0
+            },
+            "M2_scalar": {
+              "reference": -156281.5572927546,
+              "fresh": -156281.5572927546,
+              "signed_difference": 0.0
+            },
+            "M2_rich": {
+              "reference": -156144.58131731278,
+              "fresh": -156144.58131731278,
+              "signed_difference": 0.0
+            }
+          },
+          "summary": {
+            "dataset": "geco",
+            "model": "pythia-160m",
+            "N": 30155,
+            "S": 169.87156978813877,
+            "R_scalar": 18.254640772036325,
+            "R_rich": 155.23061621381223,
+            "T_scalar": 188.1262105601751,
+            "T_rich": 325.102186001951,
+            "S_per_word": 0.005633280377653416,
+            "R_scalar_per_word": 0.0006053603306926322,
+            "R_rich_per_word": 0.005147757128629157,
+            "T_scalar_per_word": 0.0062386407083460495,
+            "T_rich_per_word": 0.010781037506282573,
+            "scalar_percent_over_surprisal": 10.746142391456813,
+            "rich_percent_over_surprisal": 91.38116307950382,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 8,
+            "positive_R_rich_folds": 10
+          },
+          "poster_display_checks": [],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 630.8230211249902
+        },
+        "natural_stories_pythia-410m": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0,
+            "scalar": 0.0
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 0.0,
+            "middle_mean_cosine": 0.0,
+            "late_mean_cosine": 0.0
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.0,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.0,
+            "M1_variance": 0.0,
+            "M1_ll": 0.0,
+            "M1_fold_ll": 0.0,
+            "M1_pooled_ll": 0.0,
+            "M2_scalar_prediction": 0.0,
+            "M2_scalar_variance": 0.0,
+            "M2_scalar_ll": 0.0,
+            "M2_scalar_fold_ll": 0.0,
+            "M2_scalar_pooled_ll": 0.0,
+            "M2_rich_prediction": 0.0,
+            "M2_rich_variance": 0.0,
+            "M2_rich_ll": 0.0,
+            "M2_rich_fold_ll": 0.0,
+            "M2_rich_pooled_ll": 0.0,
+            "S": 0.0,
+            "R_scalar": 0.0,
+            "R_rich": 0.0,
+            "T_scalar": 0.0,
+            "T_rich": 0.0,
+            "rich_percent_over_surprisal": 0.0,
+            "scalar_percent_over_surprisal": 0.0
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -48994.4532706599,
+              "fresh": -48994.4532706599,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -48571.855182332656,
+              "fresh": -48571.855182332656,
+              "signed_difference": 0.0
+            },
+            "M2_scalar": {
+              "reference": -48566.38903933147,
+              "fresh": -48566.38903933147,
+              "signed_difference": 0.0
+            },
+            "M2_rich": {
+              "reference": -48260.35418469518,
+              "fresh": -48260.35418469518,
+              "signed_difference": 0.0
+            }
+          },
+          "summary": {
+            "dataset": "natural_stories",
+            "model": "pythia-410m",
+            "N": 10216,
+            "S": 422.5980883272456,
+            "R_scalar": 5.466143001182065,
+            "R_rich": 311.50099763747767,
+            "T_scalar": 428.0642313284277,
+            "T_rich": 734.0990859647233,
+            "S_per_word": 0.041366296821382695,
+            "R_scalar_per_word": 0.0005350570674610478,
+            "R_rich_per_word": 0.030491483715493116,
+            "T_scalar_per_word": 0.041901353888843744,
+            "T_rich_per_word": 0.0718577805368758,
+            "scalar_percent_over_surprisal": 1.293461364867621,
+            "rich_percent_over_surprisal": 73.71093392080418,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 8,
+            "positive_R_rich_folds": 9
+          },
+          "poster_display_checks": [],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 559.0431858749944
+        },
+        "geco_pythia-410m": {
+          "identity_order_folds": "exact",
+          "specifications_and_selections": "exact",
+          "feature_max_absolute_errors": {
+            "hidden": 0.0,
+            "displacement": 0.0,
+            "curvature": 0.0,
+            "norm_dynamics": 0.0,
+            "contextualization": 0.0,
+            "context_dependence": 0.0,
+            "previous_relations": 0.0,
+            "surprisal": 0.0,
+            "scalar": 0.0
+          },
+          "scalar_columns_max_absolute_errors": {
+            "early_mean_cosine": 0.0,
+            "middle_mean_cosine": 0.0,
+            "late_mean_cosine": 0.0
+          },
+          "training_derived_rich_max_absolute_errors": {
+            "layer_early": 0.0,
+            "layer_middle": 0.0,
+            "layer_late": 0.0,
+            "layer_combination": 0.0,
+            "typicality": 0.0
+          },
+          "control_max_absolute_error": 0.0,
+          "final_max_absolute_differences": {
+            "M0_prediction": 0.0,
+            "M0_variance": 0.0,
+            "M0_ll": 0.0,
+            "M0_fold_ll": 0.0,
+            "M0_pooled_ll": 0.0,
+            "M1_prediction": 0.0,
+            "M1_variance": 0.0,
+            "M1_ll": 0.0,
+            "M1_fold_ll": 0.0,
+            "M1_pooled_ll": 0.0,
+            "M2_scalar_prediction": 0.0,
+            "M2_scalar_variance": 0.0,
+            "M2_scalar_ll": 0.0,
+            "M2_scalar_fold_ll": 0.0,
+            "M2_scalar_pooled_ll": 0.0,
+            "M2_rich_prediction": 0.0,
+            "M2_rich_variance": 0.0,
+            "M2_rich_ll": 0.0,
+            "M2_rich_fold_ll": 0.0,
+            "M2_rich_pooled_ll": 0.0,
+            "S": 0.0,
+            "R_scalar": 0.0,
+            "R_rich": 0.0,
+            "T_scalar": 0.0,
+            "T_rich": 0.0,
+            "rich_percent_over_surprisal": 0.0,
+            "scalar_percent_over_surprisal": 0.0
+          },
+          "pooled_likelihoods": {
+            "M0": {
+              "reference": -156469.68350331474,
+              "fresh": -156469.68350331474,
+              "signed_difference": 0.0
+            },
+            "M1": {
+              "reference": -156306.49068642594,
+              "fresh": -156306.49068642594,
+              "signed_difference": 0.0
+            },
+            "M2_scalar": {
+              "reference": -156293.0888225821,
+              "fresh": -156293.0888225821,
+              "signed_difference": 0.0
+            },
+            "M2_rich": {
+              "reference": -156202.00110191733,
+              "fresh": -156202.00110191733,
+              "signed_difference": 0.0
+            }
+          },
+          "summary": {
+            "dataset": "geco",
+            "model": "pythia-410m",
+            "N": 30155,
+            "S": 163.19281688880477,
+            "R_scalar": 13.401863843824751,
+            "R_rich": 104.48958450860184,
+            "T_scalar": 176.5946807326295,
+            "T_rich": 267.68240139740664,
+            "S_per_word": 0.005411799598368588,
+            "R_scalar_per_word": 0.0004444325599013348,
+            "R_rich_per_word": 0.0034650832203151,
+            "T_scalar_per_word": 0.005856232158269923,
+            "T_rich_per_word": 0.00887688281868369,
+            "scalar_percent_over_surprisal": 8.212287831857466,
+            "rich_percent_over_surprisal": 64.02829885570162,
+            "positive_S_folds": 10,
+            "positive_R_scalar_folds": 8,
+            "positive_R_rich_folds": 9
+          },
+          "poster_display_checks": [],
+          "report_display_status": "Two-page report not available; cannot verify its actual display precision.",
+          "reference_precision_changes": [],
+          "qualitative_checks": {
+            "contrast_signs_unchanged": true,
+            "rich_exceeds_scalar": true,
+            "positive_fold_counts_unchanged": true
+          },
+          "review_flags": [],
+          "seconds": 1248.3157174580265
+        }
+      },
+      "maxima": {
+        "feature_max_absolute_errors.hidden": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.displacement": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.curvature": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.norm_dynamics": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.contextualization": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.context_dependence": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.previous_relations": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "feature_max_absolute_errors.surprisal": {
+          "case": "geco_gpt2",
+          "maximum_absolute_deviation": 0.0001932382583618164
+        },
+        "feature_max_absolute_errors.scalar": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 9.145197170379316e-07
+        },
+        "final_max_absolute_differences.M0_prediction": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "final_max_absolute_differences.M0_variance": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "final_max_absolute_differences.M0_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "final_max_absolute_differences.M0_fold_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 9.094947017729282e-13
+        },
+        "final_max_absolute_differences.M1_prediction": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0002896480586969119
+        },
+        "final_max_absolute_differences.M1_variance": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 4.628979047538451e-05
+        },
+        "final_max_absolute_differences.M1_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 6.247382464152906e-05
+        },
+        "final_max_absolute_differences.M1_fold_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0001979113394554588
+        },
+        "final_max_absolute_differences.M2_scalar_prediction": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00028674110092197225
+        },
+        "final_max_absolute_differences.M2_scalar_variance": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 4.278129074464232e-05
+        },
+        "final_max_absolute_differences.M2_scalar_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 6.295620920582223e-05
+        },
+        "final_max_absolute_differences.M2_scalar_fold_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00019141602660965873
+        },
+        "final_max_absolute_differences.M2_rich_prediction": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00029093483863107394
+        },
+        "final_max_absolute_differences.M2_rich_variance": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 4.3043463051617437e-05
+        },
+        "final_max_absolute_differences.M2_rich_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 6.189643099219211e-05
+        },
+        "final_max_absolute_differences.M2_rich_fold_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00018586488477012608
+        },
+        "final_max_absolute_differences.S": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00018176213632159488
+        },
+        "final_max_absolute_differences.R_scalar": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 1.7001499641899898e-05
+        },
+        "final_max_absolute_differences.R_rich": {
+          "case": "geco_gpt2",
+          "maximum_absolute_deviation": 7.815785380671514e-06
+        },
+        "final_max_absolute_differences.T_scalar": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00016476063666459595
+        },
+        "final_max_absolute_differences.T_rich": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00018310476036731416
+        },
+        "final_max_absolute_differences.rich_percent_over_surprisal": {
+          "case": "geco_gpt2",
+          "maximum_absolute_deviation": 2.4250713572371296e-05
+        },
+        "final_max_absolute_differences.scalar_percent_over_surprisal": {
+          "case": "geco_gpt2",
+          "maximum_absolute_deviation": 7.746269039543563e-06
+        },
+        "final_max_absolute_differences.M0_pooled_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.0
+        },
+        "final_max_absolute_differences.M1_pooled_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00018176213632159488
+        },
+        "final_max_absolute_differences.M2_scalar_pooled_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00016476063666459595
+        },
+        "final_max_absolute_differences.M2_rich_pooled_ll": {
+          "case": "natural_stories_gpt2",
+          "maximum_absolute_deviation": 0.00018310476036731416
+        }
+      },
+      "within_corpus_rankings_unchanged": {
+        "natural_stories": {
+          "S": true,
+          "R_scalar": true,
+          "R_rich": true,
+          "T_scalar": true,
+          "T_rich": true,
+          "scalar_percent_over_surprisal": true,
+          "rich_percent_over_surprisal": true
+        },
+        "geco": {
+          "S": true,
+          "R_scalar": true,
+          "R_rich": true,
+          "T_scalar": true,
+          "T_rich": true,
+          "scalar_percent_over_surprisal": true,
+          "rich_percent_over_surprisal": true
+        }
+      },
+      "poster_precision": "Main S/R/T and percentage labels: one decimal. S/N ranges: four decimals. All checked visible CORE labels are unchanged. Historical entropy-conditioned figure is outside this final CORE validation.",
+      "reference_precision": "Last digits of six-decimal contrast totals can differ; the Natural Stories/GPT-2 rich ratio changes from 52.5997 to 52.5996 at four decimals, but remains 52.6 at actual poster precision. Exact reference tables are retained unchanged.",
+      "two_page_report_precision": "The two-page report was not available for inspection. Its displayed rounding cannot be certified for the GPT cases. Pythia quantities match the reference exactly.",
+      "cpu_fresh_validation": "Not performed; no bitwise agreement across CUDA, MPS or CPU is promised."
+    }
+  }
+}

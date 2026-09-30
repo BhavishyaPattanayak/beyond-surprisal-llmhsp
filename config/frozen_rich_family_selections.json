@@ -1,0 +1,755 @@
+{
+  "provenance": "Rich representation families were selected separately within each outer training set during an earlier entropy-conditioned analysis. Their per-fold membership is frozen in this submission. Final CORE evaluation excludes entropy and refits preprocessing, PCA and ridge models using those fixed families. This is not a fresh entropy-free feature search.",
+  "original_rule": "Each family tunes ridge alpha within five inner folds. Qualify if pooled inner SSE improves and at least four of five inner folds improve over the entropy-conditioned baseline. Preserve accepted family order; if layer_combination qualifies, omit individual layer PCA families from the combined model.",
+  "cases": {
+    "natural_stories_gpt2": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ]
+    },
+    "natural_stories_distilgpt2": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ]
+    },
+    "natural_stories_pythia-160m": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ]
+    },
+    "natural_stories_pythia-410m": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ]
+    },
+    "geco_gpt2": {
+      "0": [
+        "displacement",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "previous_relations",
+        "layer_combination"
+      ]
+    },
+    "geco_distilgpt2": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ]
+    },
+    "geco_pythia-160m": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "layer_combination"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "4": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "9": [
+        "displacement",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ]
+    },
+    "geco_pythia-410m": {
+      "0": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "1": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "2": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination",
+        "typicality"
+      ],
+      "3": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "4": [
+        "displacement",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "5": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "6": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "7": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "8": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "context_dependence",
+        "previous_relations",
+        "layer_combination"
+      ],
+      "9": [
+        "displacement",
+        "curvature",
+        "norm_dynamics",
+        "contextualization",
+        "previous_relations",
+        "layer_combination"
+      ]
+    }
+  }
+}
