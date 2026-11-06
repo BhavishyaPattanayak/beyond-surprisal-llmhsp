@@ -32,6 +32,24 @@ The evaluated models are:
 
 Rich representation families were selected separately within each outer training set during an earlier entropy conditioned analysis. Their selections are frozen here. Entropy is not included in the final models.
 
+## Results
+
+Ordinary surprisal improved held out reading time prediction over the control model across all 8 dataset model combinations.
+Scalar representation features, based on layerwise cosine distances, provided relatively small additional improvements. However, richer hidden representation features produced substantially larger gains.
+
+The table below shows the additional predictive contribution of richer representations relative to that of surprisal, measured using held out log likelihood.
+
+| Model | Natural Stories | GECO |
+|---|---:|---:|
+| GPT-2 | 52.6% | 56.5% |
+| DistilGPT-2 | 50.0% | 77.5% |
+| Pythia 160M | 50.6% | 91.4% |
+| Pythia 410M | 73.7% | 64.0% |
+
+These percentages are the additional held out log likelihood improvement from richer representations relative to the improvement from surprisal over the control model. They are the percentage of reading time variance explained.
+
+
+
 ## Running the analysis
 
 Python 3.12 is recommended.
